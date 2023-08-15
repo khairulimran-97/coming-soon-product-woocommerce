@@ -32,5 +32,3 @@ Contributions are welcome! If you encounter bugs, have feature requests, or woul
 This project is licensed under the [MIT License](LICENSE).
 
 ---
-
-Designed and developed by [Your Name](https://yourwebsite.com).
