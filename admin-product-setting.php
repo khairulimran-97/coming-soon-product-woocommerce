@@ -243,3 +243,43 @@ function my_save_selected_products() {
 }
 add_action('wp_ajax_my_save_selected_products', 'my_save_selected_products');
 add_action('wp_ajax_nopriv_my_save_selected_products', 'my_save_selected_products');
+
+
+ // Hide add to cart function
+
+function hide_variations_form_for_selected_products() {
+    // Check if we're on a single product page
+    if (is_product()) {
+        global $post, $wpdb;
+
+        // Replace 'wp_comingsoon_products' with your actual table name
+        $table_name = $wpdb->prefix . 'comingsoon_products';
+
+        // Fetch the row with the selected product IDs and launching date from the custom table
+        $selected_data = $wpdb->get_row("SELECT selected_products, launching_date FROM $table_name WHERE id = 1");
+
+        // Get the current product's ID
+        $current_product_id = $post->ID;
+
+        // Decode the JSON-encoded array of selected product IDs
+        $selected_product_ids = array();
+        if ($selected_data && !empty($selected_data->selected_products)) {
+            $selected_product_ids = json_decode($selected_data->selected_products);
+        }
+
+        // Check if the current product's ID is in the selected product IDs array
+        if (in_array($current_product_id, $selected_product_ids)) {
+            // Check if the current date and time are later than the launching date
+            $current_datetime = current_time('mysql');
+            $launching_datetime = $selected_data->launching_date;
+
+            if ($current_datetime < $launching_datetime) {
+                // Output inline CSS to hide the element with the specified class
+                echo '<style>.cart { display: none; }</style>';
+                echo '<style>.single_variation_wrap { display: none!important; }</style>';
+            }
+        }
+    }
+}
+
+add_action('wp_head', 'hide_variations_form_for_selected_products');
