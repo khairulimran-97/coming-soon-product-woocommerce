@@ -18,9 +18,10 @@ This WordPress plugin provides an admin interface for administrators to select s
 
 ## Screenshots
 
-![Admin Page](<img width="1491" alt="image" src="https://github.com/khairulimran-97/coming-soon-product-woocommerce/assets/105085586/612116bf-cf7f-4303-98d6-1512ab143af6">
-)
-![Single Product Page](<img width="1068" alt="image" src="https://github.com/khairulimran-97/coming-soon-product-woocommerce/assets/105085586/49c6e5b6-d176-41de-9d02-c1689e8d2a93">)
+<img width="1491" alt="image" src="https://github.com/khairulimran-97/coming-soon-product-woocommerce/assets/105085586/e0b218ef-407d-4655-9c09-18dc72d81994">
+
+<img width="1068" alt="image" src="https://github.com/khairulimran-97/coming-soon-product-woocommerce/assets/105085586/007138b4-8c3f-4d79-a0ec-3ba541aee8c0">
+
 
 ## Contributing
 
